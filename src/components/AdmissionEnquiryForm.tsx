@@ -8,8 +8,7 @@ import {
   CheckCircle, 
   AlertCircle, 
   ShieldCheck, 
-  Phone,
-  HelpCircle
+  Phone
 } from 'lucide-react';
 
 interface AdmissionEnquiryFormProps {
@@ -58,7 +57,6 @@ export const AdmissionEnquiryForm: React.FC<AdmissionEnquiryFormProps> = ({ init
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
-      // Build tailored WhatsApp message
       const selectedCourseObj = COURSES.find(c => c.id === formData.course);
       const courseName = selectedCourseObj ? selectedCourseObj.name : formData.course;
 
@@ -66,14 +64,12 @@ export const AdmissionEnquiryForm: React.FC<AdmissionEnquiryFormProps> = ({ init
 `*ADMISSION INQUIRY - JOIN ME COMMERCE CLASSES (JULE SOLAPUR)*
 --------------------------------------
 *Student Name:* ${formData.studentName.trim()}
-${formData.parentName.trim() ? `*Parent/Guardian:* ${formData.parentName.trim()}` : ''}
-*Contact Number:* ${formData.phone.trim()}
+${formData.parentName.trim() ? `*Parent/Guardian:* ${formData.parentName.trim()}\n` : ''}*Contact Number:* ${formData.phone.trim()}
 *Course of Interest:* ${courseName}
 *Academic Background:* ${formData.currentStandard}
 *Preferred Mode of Contact:* ${formData.preferredContact}
-${formData.message.trim() ? `*Questions/Notes:* ${formData.message.trim()}` : ''}
---------------------------------------
-_Inquiry submitted via official web concept portal_`;
+${formData.message.trim() ? `*Questions/Notes:* ${formData.message.trim()}\n` : ''}--------------------------------------
+_Inquiry sent via Join Me Commerce Classes Portal_`;
 
       const encoded = encodeURIComponent(waText);
       const waUrl = `https://wa.me/919822054180?text=${encoded}`;
@@ -97,31 +93,31 @@ _Inquiry submitted via official web concept portal_`;
   };
 
   return (
-    <section id="enquiry" className="py-16 lg:py-24 bg-ivory-100 border-b border-slate-200/80 scroll-mt-12">
+    <section id="enquiry" className="py-14 lg:py-20 bg-ivory-100 border-b border-slate-200/80 scroll-mt-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center space-y-3 mb-12">
+        <div className="text-center space-y-2 mb-10">
           <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold uppercase tracking-wider border border-emerald-300">
             <Send className="w-3.5 h-3.5 mr-1" />
-            Direct Admission Inquiry
+            Admissions Inquiry
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl font-extrabold text-navy-950 tracking-tight">
             Enquire for Batches &amp; Admissions
           </h2>
-          <p className="text-base text-slate-600 max-w-2xl mx-auto">
-            Fill out the details below to request batch timings, seat availability, and subject counseling directly from Prof. Pradeep Bhandare Sir at Jule Solapur.
+          <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
+            Submit the details below to receive batch timings, seat availability, and course information directly from Prof. Pradeep Bhandare’s office.
           </p>
         </div>
 
         {/* Form Container */}
-        <div className="bg-white rounded-2xl p-6 sm:p-10 border border-slate-200 shadow-soft-md">
+        <div className="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 border border-slate-200 shadow-soft-md">
           
           {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+            <form onSubmit={handleSubmit} className="space-y-5" noValidate>
               
               {/* Row 1: Student Name & Parent Name */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="studentName" className="block text-xs font-bold uppercase tracking-wider text-navy-950 mb-1.5">
                     Student Full Name <span className="text-rose-600">*</span>
@@ -162,7 +158,7 @@ _Inquiry submitted via official web concept portal_`;
               </div>
 
               {/* Row 2: Phone & Course Selection */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="phone" className="block text-xs font-bold uppercase tracking-wider text-navy-950 mb-1.5">
                     Contact Mobile Number <span className="text-rose-600">*</span>
@@ -191,7 +187,7 @@ _Inquiry submitted via official web concept portal_`;
                     </p>
                   ) : (
                     <p className="text-[11px] text-slate-500 mt-1">
-                      We will share batch schedules to this number.
+                      Batch details and schedules will be shared on this number.
                     </p>
                   )}
                 </div>
@@ -216,7 +212,7 @@ _Inquiry submitted via official web concept portal_`;
               </div>
 
               {/* Row 3: Current Academic Level & Preferred Mode */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="currentStandard" className="block text-xs font-bold uppercase tracking-wider text-navy-950 mb-1.5">
                     Current Academic Status
@@ -265,92 +261,87 @@ _Inquiry submitted via official web concept portal_`;
                 </label>
                 <textarea
                   id="message"
-                  rows={3}
+                  rows={2}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Ask about batch timings, accountancy test schedules, or CA Foundation counseling..."
+                  placeholder="Ask about batch timings, subject requirements, or CA Foundation counseling..."
                   className="w-full px-4 py-2.5 rounded-lg text-sm bg-slate-50 border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600"
                 ></textarea>
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
+              <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center"
+                  className="w-full sm:w-auto px-7 py-3 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center"
                 >
                   <Send className="w-4 h-4 mr-2" />
-                  Review &amp; Generate WhatsApp Inquiry
+                  Generate WhatsApp Inquiry
                 </button>
 
                 <a
                   href={INSTITUTE_INFO.contact.phoneHref}
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-navy-950 font-semibold text-xs border border-slate-300 transition-colors flex items-center justify-center"
+                  className="w-full sm:w-auto px-5 py-3 rounded-lg bg-slate-100 hover:bg-slate-200 text-navy-950 font-semibold text-xs border border-slate-300 transition-colors flex items-center justify-center"
                 >
-                  <Phone className="w-3.5 h-3.5 mr-2 text-gold-600" />
-                  Or Call +91 98220 54180
+                  <Phone className="w-3.5 h-3.5 mr-1.5 text-gold-600" />
+                  Call Office (+91 98220 54180)
                 </a>
               </div>
 
               {/* Privacy Assurance Note */}
-              <div className="pt-4 border-t border-slate-100 flex items-start space-x-2 text-[11px] text-slate-500">
+              <div className="pt-3 border-t border-slate-100 flex items-start space-x-2 text-[11px] text-slate-500">
                 <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
                 <p>
-                  <strong>Privacy Assurance:</strong> Your contact details are used solely to communicate batch schedules and admissions details directly by Prof. Pradeep Bhandare’s office. We never share student information with third parties.
+                  <strong>Privacy Assurance:</strong> Your contact details are used solely to communicate batch schedules and admissions information directly by Join Me Commerce Classes.
                 </p>
               </div>
 
             </form>
           ) : (
             /* Success & Instant WhatsApp Action State */
-            <div className="py-8 text-center space-y-6">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto shadow-soft-sm">
-                <CheckCircle className="w-9 h-9" />
+            <div className="py-6 text-center space-y-5">
+              <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto shadow-soft-sm">
+                <CheckCircle className="w-8 h-8" />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <h3 className="font-serif text-2xl font-bold text-navy-950">
-                  Inquiry Form Validated!
+                  Inquiry Ready to Send
                 </h3>
                 <p className="text-sm text-slate-600 max-w-md mx-auto">
-                  Your admission inquiry details for <strong className="text-navy-950">{formData.studentName}</strong> have been structured.
+                  Your details for <strong className="text-navy-950">{formData.studentName}</strong> have been structured.
                 </p>
               </div>
 
               {/* WhatsApp Launch Prompt */}
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 max-w-lg mx-auto text-left space-y-4">
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-5 max-w-lg mx-auto text-left space-y-3">
                 <div className="flex items-center space-x-2 text-emerald-900 font-bold text-sm">
-                  <MessageSquare className="w-5 h-5 text-emerald-700" />
+                  <MessageSquare className="w-4 h-4 text-emerald-700" />
                   <span>Send Directly to Prof. Pradeep Bhandare Sir:</span>
                 </div>
                 <p className="text-xs text-emerald-800 leading-relaxed">
-                  Click the button below to open official WhatsApp with your inquiry pre-filled. This connects you straight to the institute without waiting for email callbacks.
+                  Click the button below to open official WhatsApp with your inquiry pre-filled. This connects you straight to the institute office.
                 </p>
-                <div className="pt-2">
+                <div className="pt-1">
                   <a
                     href={generatedWhatsAppUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm shadow-md transition-all"
+                    className="w-full inline-flex items-center justify-center px-6 py-3 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm shadow-md transition-all"
                   >
                     <MessageSquare className="w-4 h-4 mr-2" />
-                    Open in WhatsApp (+91 98220 54180)
+                    Open WhatsApp Chat (+91 98220 54180)
                   </a>
                 </div>
               </div>
 
-              <div className="pt-2 flex justify-center space-x-4">
+              <div className="pt-1 flex justify-center space-x-4">
                 <button
                   onClick={handleReset}
                   className="text-xs font-semibold text-slate-600 hover:text-navy-950 underline"
                 >
                   Submit Another Inquiry
                 </button>
-              </div>
-
-              {/* Developer Demo Status Notice */}
-              <div className="text-[11px] text-slate-400 bg-slate-50 p-3 rounded-lg max-w-md mx-auto border border-slate-200">
-                ℹ️ <strong>System Note for Owner:</strong> This form includes pre-built hooks ready for direct CRM or automated SMS/Email webhooks upon official launch.
               </div>
             </div>
           )}

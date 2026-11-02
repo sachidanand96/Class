@@ -1,19 +1,19 @@
 export const INSTITUTE_INFO = {
   name: "Join Me Commerce Classes",
   branch: "Jule Solapur Branch",
-  legalTagline: "Premier Commerce Academy & Professional Foundation Coaching",
+  legalTagline: "Commerce Academy & Professional Foundation Coaching",
   director: {
     name: "Prof. Pradeep Bhandare",
     honorific: "Sir",
     title: "Founder & Academic Director",
-    focus: "Accountancy, Financial Foundations & Commerce Mentorship"
+    focus: "Accountancy & Commerce Instruction"
   },
   contact: {
     phone: "+91 98220 54180",
     phoneDisplay: "+91 98220 54180",
     whatsapp: "+91 98220 54180",
     phoneHref: "tel:+919822054180",
-    whatsappHref: "https://wa.me/919822054180?text=Namaste%20Bhandare%20Sir%2C%20I%20would%20like%20to%20know%20more%20about%20Join%20Me%20Commerce%20Classes%20in%20Jule%2C%20Solapur.%20Please%20share%20the%20available%20courses%20and%20current%20batch%20details.",
+    whatsappHref: "https://wa.me/919822054180?text=Namaste%2C%20I%20would%20like%20to%20know%20more%20about%20Join%20Me%20Commerce%20Classes%20in%20Jule%2C%20Solapur.%20Please%20share%20the%20available%20courses%20and%20current%20batch%20details.",
     address: {
       line1: "First Floor, Kanishk Plaza",
       landmark: "Above Annapurna Sweet Mart, Vishal Nagar",
@@ -37,8 +37,8 @@ export const INSTITUTE_INFO = {
       rating: "4.8",
       totalReviews: 75,
       scale: "5.0",
-      sources: "5bestincity & Justdial Solapur directories",
-      disclaimer: "Directory rating aggregated across third-party local education portals (5bestincity & Justdial). Google Business profile reviews subject to formal client verification upon domain deployment."
+      sources: "Justdial & 5bestincity local directories",
+      disclaimer: "Rating aggregated across public listings on local business directories (Justdial & 5bestincity)."
     }
   }
 };

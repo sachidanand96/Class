@@ -5,24 +5,16 @@ import {
   MapPin, 
   Phone, 
   MessageSquare, 
-  ExternalLink, 
-  ShieldCheck, 
-  GraduationCap,
-  Sparkles,
-  FileCode
+  ExternalLink
 } from 'lucide-react';
 
-interface FooterProps {
-  onOpenManifest: () => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onOpenManifest }) => {
+export const Footer: React.FC = () => {
   return (
-    <footer className="bg-navy-950 text-slate-300 pt-16 pb-12 border-t border-navy-850">
+    <footer className="bg-navy-950 text-slate-300 pt-14 pb-16 lg:pb-12 border-t border-navy-850">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-navy-850">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-10 border-b border-navy-850">
           
           {/* Col 1: Institute Brand & Scope */}
           <div className="lg:col-span-4 space-y-4">
@@ -41,10 +33,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenManifest }) => {
             </div>
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-              Premier commerce academy in Solapur providing structured classroom coaching for Class 11th &amp; 12th HSC Board, B.Com, BBA, and CA Foundation under the academic leadership of <strong className="text-slate-200">Prof. Pradeep Bhandare Sir</strong>.
+              Commerce academy in Jule Solapur providing classroom coaching for Class 11th &amp; 12th HSC Board, B.Com, BBA, and CA Foundation under the academic direction of <strong className="text-slate-200">Prof. Pradeep Bhandare Sir</strong>.
             </p>
 
-            <div className="pt-2 flex items-center space-x-3">
+            <div className="pt-1 flex items-center space-x-3">
               <a
                 href={INSTITUTE_INFO.contact.social.facebook}
                 target="_blank"
@@ -113,7 +105,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenManifest }) => {
           {/* Col 4: Branch Address & Inquiries */}
           <div className="lg:col-span-3 space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-widest text-gold-400 font-sans">
-              Jule Solapur Hub
+              Jule Solapur Center
             </h4>
             <p className="text-xs text-slate-400 leading-relaxed">
               First Floor, Kanishk Plaza, Above Annapurna Sweet Mart, Vishal Nagar, Jule Solapur, Solapur, Maharashtra 413004.
@@ -132,32 +124,18 @@ export const Footer: React.FC<FooterProps> = ({ onOpenManifest }) => {
                 </a>
               </div>
             </div>
-            <div className="pt-2">
-              <button
-                onClick={onOpenManifest}
-                className="inline-flex items-center text-[11px] text-slate-400 hover:text-gold-300 underline underline-offset-2"
-              >
-                <FileCode className="w-3.5 h-3.5 mr-1" />
-                View Concept Asset Manifest
-              </button>
-            </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar: Copyright & Concept Demo Disclosure */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        {/* Bottom Bar: Copyright */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
           <p>
             © {new Date().getFullYear()} Join Me Commerce Classes — Jule Solapur Branch. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center gap-4 text-slate-500 text-[11px]">
-            <span className="text-emerald-400 flex items-center">
-              <ShieldCheck className="w-3.5 h-3.5 mr-1" />
-              Verified Local Lead Intelligence Dossier
-            </span>
-            <span>•</span>
-            <span>Prepared for Client Demonstration to Prof. Pradeep Bhandare Sir</span>
-          </div>
+          <p className="text-slate-400 text-[11px]">
+            First Floor, Kanishk Plaza, Vishal Nagar, Jule Solapur
+          </p>
         </div>
 
       </div>

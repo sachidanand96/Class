@@ -3,20 +3,16 @@ import { INSTITUTE_INFO } from '../data/instituteInfo';
 import { 
   Phone, 
   MessageSquare, 
-  MapPin, 
   Menu, 
   X, 
-  GraduationCap, 
-  ChevronRight,
-  BookOpen
+  ChevronRight
 } from 'lucide-react';
 
 interface NavbarProps {
   onOpenEnquiry: (courseId?: string) => void;
-  onOpenManifest: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry, onOpenManifest }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -41,7 +37,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry, onOpenManifest })
 
   return (
     <header className="sticky top-0 z-50 w-full transition-all duration-200">
-      {/* Main Navbar */}
       <nav 
         className={`w-full transition-all duration-300 ${
           isScrolled 
@@ -115,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenEnquiry, onOpenManifest })
 
         {/* Mobile Dropdown Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-3">
             <div className="grid grid-cols-2 gap-2 pt-2 border-b border-slate-100 pb-3">
               {navLinks.map((link) => (
                 <a

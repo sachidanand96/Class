@@ -14,12 +14,9 @@ import { FAQSection } from './components/FAQSection';
 import { LocationContact } from './components/LocationContact';
 import { Footer } from './components/Footer';
 import { FloatingContactWidget } from './components/FloatingContactWidget';
-import { AssetManifestModal } from './components/AssetManifestModal';
-import { ShieldCheck, Sparkles, ExternalLink } from 'lucide-react';
 
 export const App: React.FC = () => {
   const [selectedCourseForForm, setSelectedCourseForForm] = useState<string>('11th-commerce');
-  const [manifestModalOpen, setManifestModalOpen] = useState<boolean>(false);
 
   const handleOpenEnquiry = (courseId?: string) => {
     if (courseId) {
@@ -33,14 +30,12 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-ivory-50 text-slate-850 antialiased font-sans">
+      
       {/* Navigation */}
-      <Navbar 
-        onOpenEnquiry={handleOpenEnquiry} 
-        onOpenManifest={() => setManifestModalOpen(true)} 
-      />
+      <Navbar onOpenEnquiry={handleOpenEnquiry} />
 
       {/* Main Content Sections */}
-      <main className="flex-grow">
+      <main className="flex-grow pb-12 sm:pb-0">
         {/* 1. Hero Section */}
         <Hero onOpenEnquiry={handleOpenEnquiry} />
 
@@ -59,11 +54,11 @@ export const App: React.FC = () => {
         {/* 6. Faculty Spotlight (Prof. Pradeep Bhandare Sir) */}
         <FacultySpotlight />
 
-        {/* 7. Learning Environment & Infrastructure */}
-        <LearningEnvironment />
-
-        {/* 8. Student Achievements & Board Results */}
+        {/* 7. Academic Standards & Examination Preparation */}
         <AchievementsResults />
+
+        {/* 8. Learning Environment & Infrastructure */}
+        <LearningEnvironment />
 
         {/* 9. Verified Directory Reputation & Reviews */}
         <DirectoryTrust />
@@ -79,16 +74,10 @@ export const App: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <Footer onOpenManifest={() => setManifestModalOpen(true)} />
+      <Footer />
 
       {/* Floating Call & WhatsApp Bar */}
       <FloatingContactWidget onOpenEnquiry={() => handleOpenEnquiry()} />
-
-      {/* Asset Manifest Modal */}
-      <AssetManifestModal 
-        isOpen={manifestModalOpen} 
-        onClose={() => setManifestModalOpen(false)} 
-      />
 
     </div>
   );
