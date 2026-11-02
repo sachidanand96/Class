@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070D18"/>
+      <stop offset="40%" stop-color="#0A1628"/>
+      <stop offset="100%" stop-color="#142948"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <radialGradient id="spotlight" cx="65%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#1E3A63" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0A1628" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2A4E82" stroke-width="0.5" stroke-opacity="0.25"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGrad)"/>
+  <rect width="1200" height="800" fill="url(#spotlight)"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+
+  <!-- Architectural Columns / Perspective -->
+  <g opacity="0.3" stroke="#2A4E82" stroke-width="1.5">
+    <line x1="100" y1="0" x2="100" y2="800"/>
+    <line x1="1100" y1="0" x2="1100" y2="800"/>
+    <path d="M 100 200 C 300 120, 900 120, 1100 200" fill="none"/>
+    <path d="M 100 240 C 300 160, 900 160, 1100 240" fill="none"/>
+  </g>
+
+  <!-- Central Academic Board / Lecture Slate -->
+  <rect x="220" y="160" width="760" height="460" rx="16" fill="#0A1E34" stroke="#2A4E82" stroke-width="2" opacity="0.95"/>
+  <rect x="236" y="176" width="728" height="428" rx="10" fill="#061220" stroke="#172A45" stroke-width="1.5"/>
+
+  <!-- Golden Header Plaque -->
+  <rect x="360" y="140" width="480" height="40" rx="6" fill="#0F243E" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <text x="600" y="165" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="700" fill="#FCD34D" text-anchor="middle" letter-spacing="3">
+    JOIN ME COMMERCE CLASSES • JULE SOLAPUR
+  </text>
+
+  <!-- Board Content: Balance Sheet & Accounting Equations -->
+  <g font-family="'Plus Jakarta Sans', system-ui, sans-serif">
+    <!-- Equation Badge -->
+    <rect x="280" y="220" width="640" height="54" rx="8" fill="#0E233C" stroke="#213E64" stroke-width="1"/>
+    <text x="600" y="254" font-size="19" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">
+      ASSETS  =  LIABILITIES  +  CAPITAL
+    </text>
+
+    <!-- Two-column Ledger Visual -->
+    <!-- Left Column: Debit / Applications -->
+    <rect x="280" y="295" width="305" height="235" rx="8" fill="#091829" stroke="#1E3A63" stroke-width="1"/>
+    <path d="M 280 335 L 585 335" stroke="#1E3A63" stroke-width="1"/>
+    <text x="300" y="322" font-size="13" font-weight="700" fill="#10B981" letter-spacing="1">DEBIT (Dr.) • FOUNDATIONS</text>
+    <text x="300" y="365" font-size="12" fill="#94A3B8">• Real A/c: Debit what comes in</text>
+    <text x="300" y="395" font-size="12" fill="#94A3B8">• Personal A/c: Debit the receiver</text>
+    <text x="300" y="425" font-size="12" fill="#94A3B8">• Nominal A/c: Expenses &amp; Losses</text>
+    <text x="300" y="460" font-size="12" fill="#38BDF8">✓ 11th &amp; 12th HSC Conceptual Rigor</text>
+    <text x="300" y="495" font-size="12" fill="#38BDF8">✓ B.Com &amp; BBA Corporate Accounts</text>
+
+    <!-- Right Column: Credit / Sources & CA Foundation -->
+    <rect x="615" y="295" width="305" height="235" rx="8" fill="#091829" stroke="#1E3A63" stroke-width="1"/>
+    <path d="M 615 335 L 920 335" stroke="#1E3A63" stroke-width="1"/>
+    <text x="635" y="322" font-size="13" font-weight="700" fill="#F59E0B" letter-spacing="1">CREDIT (Cr.) • PROFESSIONAL</text>
+    <text x="635" y="365" font-size="12" fill="#94A3B8">• Real A/c: Credit what goes out</text>
+    <text x="635" y="395" font-size="12" fill="#94A3B8">• Personal A/c: Credit the giver</text>
+    <text x="635" y="425" font-size="12" fill="#94A3B8">• Nominal A/c: Incomes &amp; Gains</text>
+    <text x="635" y="460" font-size="12" fill="#FCD34D">★ CA Foundation Paper 1 to 4</text>
+    <text x="635" y="495" font-size="12" fill="#FCD34D">★ Mentorship by Prof. Bhandare Sir</text>
+
+    <!-- Bottom summary ticker -->
+    <rect x="280" y="545" width="640" height="42" rx="6" fill="#081524" stroke="#1E3A63" stroke-width="1"/>
+    <circle cx="305" cy="566" r="5" fill="#10B981"/>
+    <text x="325" y="570" font-size="12" fill="#E2E8F0" font-weight="500">
+      Kanishk Plaza, First Floor • Vishal Nagar • Jule Solapur • Admissions Open
+    </text>
+  </g>
+
+  <!-- Foreground decorative elements -->
+  <!-- Left floating pill: Rating -->
+  <g transform="translate(130, 480)">
+    <rect width="210" height="70" rx="12" fill="#0F243E" stroke="#2A4E82" stroke-width="1.5" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.5))"/>
+    <text x="24" y="30" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="600" fill="#94A3B8">DIRECTORY RATING</text>
+    <text x="24" y="54" font-family="'Playfair Display', serif" font-size="22" font-weight="700" fill="#FCD34D">★ 4.8 / 5.0</text>
+    <text x="135" y="52" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" fill="#64748B">(75+ Reviews)</text>
+  </g>
+
+  <!-- Right floating pill: Batches -->
+  <g transform="translate(860, 480)">
+    <rect width="210" height="70" rx="12" fill="#0F243E" stroke="#047857" stroke-width="1.5" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.5))"/>
+    <text x="24" y="30" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" font-weight="600" fill="#34D399">OFFERINGS</text>
+    <text x="24" y="54" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="15" font-weight="700" fill="#FFFFFF">11th, 12th &amp; CA Foundation</text>
+  </g>
+</svg>

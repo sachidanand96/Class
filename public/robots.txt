@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joinmecommerce-solapur.local/sitemap.xml

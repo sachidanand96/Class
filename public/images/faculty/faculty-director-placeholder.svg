@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="facBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1E36"/>
+      <stop offset="60%" stop-color="#0A1628"/>
+      <stop offset="100%" stop-color="#050C17"/>
+    </linearGradient>
+    <linearGradient id="facGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="50%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#1E3A63" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0A1628" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="700" rx="16" fill="url(#facBg)"/>
+  <rect width="600" height="700" rx="16" fill="url(#halo)"/>
+  <rect x="12" y="12" width="576" height="676" rx="12" fill="none" stroke="#1E3A63" stroke-width="1.5"/>
+
+  <!-- Academic Crest Frame -->
+  <g transform="translate(300, 240)">
+    <!-- Outer concentric rings -->
+    <circle r="130" fill="none" stroke="#1E3A63" stroke-width="1"/>
+    <circle r="120" fill="#0A1E34" stroke="url(#facGold)" stroke-width="2"/>
+    <circle r="105" fill="#061220" stroke="#2A4E82" stroke-width="1" stroke-dasharray="4 4"/>
+    
+    <!-- Monogram PB -->
+    <text y="-10" font-family="'Playfair Display', serif" font-size="76" font-weight="700" fill="url(#facGold)" text-anchor="middle" letter-spacing="4">
+      PB
+    </text>
+    
+    <text y="35" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" fill="#94A3B8" text-anchor="middle" letter-spacing="3">
+      PROF. PRADEEP BHANDARE
+    </text>
+    <text y="54" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle" letter-spacing="2">
+      FOUNDER &amp; DIRECTOR
+    </text>
+
+    <!-- Academic Garland / Laurel SVG path -->
+    <path d="M -80 30 C -95 -20, -70 -70, -20 -95" fill="none" stroke="url(#facGold)" stroke-width="2" opacity="0.6"/>
+    <path d="M 80 30 C 95 -20, 70 -70, 20 -95" fill="none" stroke="url(#facGold)" stroke-width="2" opacity="0.6"/>
+  </g>
+
+  <!-- Bottom Details Plaque -->
+  <g transform="translate(60, 440)">
+    <rect width="480" height="190" rx="12" fill="#0C1B30" stroke="#1E3A63" stroke-width="1"/>
+    
+    <text x="240" y="45" font-family="'Playfair Display', serif" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">
+      Prof. Pradeep Bhandare Sir
+    </text>
+    
+    <text x="240" y="72" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" font-weight="600" fill="#FCD34D" text-anchor="middle" letter-spacing="1">
+      Director &amp; Chief Academic Mentor
+    </text>
+
+    <line x1="80" y1="92" x2="400" y2="92" stroke="#1E3A63" stroke-width="1"/>
+
+    <text x="240" y="120" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">
+      Join Me Commerce Classes • Jule Solapur Branch
+    </text>
+    <text x="240" y="145" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">
+      Specialization: Bookkeeping, Accountancy &amp; CA Foundation
+    </text>
+    <text x="240" y="168" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10" fill="#10B981" font-weight="600" text-anchor="middle">
+      ● Official Studio Portrait &amp; Biography to be updated on client approval
+    </text>
+  </g>
+</svg>
